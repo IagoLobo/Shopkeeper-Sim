@@ -6,7 +6,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    [SerializeField] private List<ItemData> m_playerInventory;
+    public List<ItemData> PlayerInventory;
     public int PlayerMoney { get; private set; }
 
     private void Awake()
@@ -33,12 +33,12 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(ItemData item)
     {
-        m_playerInventory.Add(item);
+        PlayerInventory.Add(item);
     }
 
     public void RemoveItem(ItemData item)
     {
-        m_playerInventory.Remove(item);
+        PlayerInventory.Remove(item);
     }
 
     public void AddMoney(int amountToAdd)

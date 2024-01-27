@@ -27,7 +27,16 @@ public class ItemSlot : MonoBehaviour
 
         InventoryManager.Instance.AddMoney(itemPrice);
         ShopMenuController.Instance.UpdatePlayerMoneyText();
-        ShopMenuController.Instance.RemoveItemFromShopkeeperList(Item);
-        ShopMenuController.Instance.UpdateShopkeeperStockItems();
+
+        if(buyingItem)
+        {
+            ShopMenuController.Instance.RemoveItemFromShopkeeperList(Item);
+            ShopMenuController.Instance.UpdateShopkeeperStockItems();
+        }
+        else
+        {
+            InventoryManager.Instance.RemoveItem(Item);
+            ShopMenuController.Instance.UpdatePlayerStockItems();
+        }
     }
 }

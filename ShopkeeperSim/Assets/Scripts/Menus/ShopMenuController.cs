@@ -19,16 +19,23 @@ public class ShopMenuController : MonoBehaviour
     [Header("Buy Screen")]
     [SerializeField] private GameObject m_buyScreen;
     [SerializeField] private TextMeshProUGUI m_yourMoneyBuyScreenText;
+    [SerializeField] private GameObject m_outOfStockBuyScreen;
 
     [Header("Sell Screen")]
     [SerializeField] private GameObject m_sellScreen;
     [SerializeField] private TextMeshProUGUI m_yourMoneySellScreenText;
+    [SerializeField] private GameObject m_outOfStockSellScreen;
 
     [Header("--- Shopkeeper Stock ---")]
     [SerializeField] private List<ItemData> m_shopkeeperStock;
     [SerializeField] private GameObject m_shopStockList;
-    [SerializeField] private GameObject m_itemSlot;
+    [SerializeField] private GameObject m_buyItemSlot;
     private List<GameObject> m_currentShopStock;
+
+    [Header("--- Player Stock ---")]
+    [SerializeField] private GameObject m_playerStockList;
+    [SerializeField] private GameObject m_sellItemSlot;
+    private List<GameObject> m_currentPlayerStock;
 
     private void Awake()
     {
@@ -75,6 +82,8 @@ public class ShopMenuController : MonoBehaviour
         {
             UpdatePlayerMoneyText();
         }
+
+        UpdatePlayerStockItems();
     }
 
     public void ActivateWelcomeScreen(bool activate)
@@ -109,7 +118,7 @@ public class ShopMenuController : MonoBehaviour
         foreach(ItemData shopItem in m_shopkeeperStock)
         {
             // Create new item slot in the UI and update its information
-            GameObject itemObj = Instantiate(m_itemSlot, m_shopStockList.transform);
+            GameObject itemObj = Instantiate(m_buyItemSlot, m_shopStockList.transform);
             m_currentShopStock.Add(itemObj);
 
             ItemSlot itemSlot = itemObj.GetComponent<ItemSlot>();
@@ -118,6 +127,12 @@ public class ShopMenuController : MonoBehaviour
             itemSlot.ItemNameText.text = shopItem.ItemName;
             itemSlot.ItemImage.sprite = shopItem.ItemIcon;
             itemSlot.ItemPriceText.text = shopItem.ItemPrice + " G";
+        }
+
+        // If there's no item left, show out of stock text to player
+        if(m_currentShopStock.Count <= 0)
+        {
+            m_outOfStockBuyScreen.SetActive(true);
         }
     }
 
@@ -130,5 +145,43 @@ public class ShopMenuController : MonoBehaviour
     private void UpdatePlayerMoneyText(TextMeshProUGUI textRef)
     {
         textRef.text = InventoryManager.Instance.PlayerMoney + " G";
+    }
+
+    public void UpdatePlayerStockItems()
+    {
+        // Remove all previous item slots, if there are any
+        if (m_currentPlayerStock != null && m_currentPlayerStock.Count > 0)
+        {
+            foreach (GameObject obj in m_currentPlayerStock)
+            {
+                Destroy(obj);
+            }
+
+            m_currentPlayerStock.Clear();
+        }
+        else
+        {
+            m_currentPlayerStock = new List<GameObject>();
+        }
+
+        foreach (ItemData playerItem in InventoryManager.Instance.PlayerInventory)
+        {
+            // Create new item slot in the UI and update its information
+            GameObject itemObj = Instantiate(m_sellItemSlot, m_playerStockList.transform);
+            m_currentPlayerStock.Add(itemObj);
+
+            ItemSlot itemSlot = itemObj.GetComponent<ItemSlot>();
+
+            itemSlot.Item = playerItem;
+            itemSlot.ItemNameText.text = playerItem.ItemName;
+            itemSlot.ItemImage.sprite = playerItem.ItemIcon;
+            itemSlot.ItemPriceText.text = playerItem.ItemPrice + " G";
+        }
+
+        // If there's no item left, show out of stock text to player
+        if (m_currentPlayerStock.Count <= 0)
+        {
+            m_outOfStockSellScreen.SetActive(true);
+        }
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
-    [SerializeField] private ItemData[] m_playerInventory;
+    [SerializeField] private List<ItemData> m_playerInventory;
     public int PlayerMoney { get; private set; }
 
     private void Awake()
@@ -28,6 +29,16 @@ public class InventoryManager : MonoBehaviour
         {
             // Open inventory menu here
         }
+    }
+
+    public void AddItem(ItemData item)
+    {
+        m_playerInventory.Add(item);
+    }
+
+    public void RemoveItem(ItemData item)
+    {
+        m_playerInventory.Remove(item);
     }
 
     public void AddMoney(int amountToAdd)

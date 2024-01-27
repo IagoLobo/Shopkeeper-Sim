@@ -1687,6 +1687,11 @@ MonoBehaviour:
   m_yourMoneyBuyScreenText: {fileID: 1806025778}
   m_sellScreen: {fileID: 108629684}
   m_yourMoneySellScreenText: {fileID: 54019036}
+  m_shopkeeperStock:
+  - {fileID: 11400000, guid: e53e9742df5ff1649868baf5dcec066f, type: 2}
+  - {fileID: 11400000, guid: 2fbd9bb038ae0f043994a41a54ebd1e8, type: 2}
+  - {fileID: 11400000, guid: d31a8298b32a0434ea8b8f607a3aeef2, type: 2}
+  - {fileID: 11400000, guid: 2e9836defd27d094fabaeb1d29ea05ad, type: 2}
 --- !u!1 &655712106
 GameObject:
   m_ObjectHideFlags: 0

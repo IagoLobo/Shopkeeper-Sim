@@ -9,7 +9,7 @@ public class ShopMenuController : MonoBehaviour
 
     public bool IsShopMenuOpen {get; private set;}
 
-    [Header("Canvas")]
+    [Header("--- Canvas ---")]
     [SerializeField] private GameObject m_shopMenuCanvas;
 
     [Header("Welcome Screen")]
@@ -22,6 +22,9 @@ public class ShopMenuController : MonoBehaviour
     [Header("Sell Screen")]
     [SerializeField] private GameObject m_sellScreen;
     [SerializeField] private TextMeshProUGUI m_yourMoneySellScreenText;
+
+    [Header("--- Shopkeeper Stock ---")]
+    [SerializeField] private List<ItemData> m_shopkeeperStock;
 
     private void Awake()
     {

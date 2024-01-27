@@ -43,7 +43,11 @@ public class InventoryManager : MonoBehaviour
 
     public void AddMoney(int amountToAdd)
     {
+        // Get current amount and sum to value given
         int newAmount = PlayerMoney + amountToAdd;
+
+        // Check if the new amount is valid, min cap is 0 and max cap is 999
         PlayerMoney = newAmount > 0 ? newAmount : 0;
+        PlayerMoney = newAmount < 1000 ? newAmount : 999;
     }
 }

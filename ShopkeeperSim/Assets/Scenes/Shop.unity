@@ -1412,6 +1412,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shopMenuCanvas: {fileID: 1294453272}
+  m_welcomeScreen: {fileID: 940708654}
+  m_buyScreen: {fileID: 1193163570}
+  m_sellScreen: {fileID: 108629684}
 --- !u!1 &655712106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 450181045}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 601978658}
+        m_TargetAssemblyTypeName: ShopMenuController, Assembly-CSharp
+        m_MethodName: ActivateShopMenu
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &655712109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3197,7 +3212,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1625735676}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 601978658}
+        m_TargetAssemblyTypeName: ShopMenuController, Assembly-CSharp
+        m_MethodName: ActivateSellScreen
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1212491182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4199,7 +4226,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 358553308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 601978658}
+        m_TargetAssemblyTypeName: ShopMenuController, Assembly-CSharp
+        m_MethodName: ActivateBuyScreen
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1709607456
 MonoBehaviour:
   m_ObjectHideFlags: 0

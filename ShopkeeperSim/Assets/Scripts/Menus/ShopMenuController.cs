@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -25,6 +26,9 @@ public class ShopMenuController : MonoBehaviour
 
     [Header("--- Shopkeeper Stock ---")]
     [SerializeField] private List<ItemData> m_shopkeeperStock;
+    [SerializeField] private GameObject m_shopStockList;
+    [SerializeField] private GameObject m_itemSlot;
+    private List<GameObject> m_currentShopStock;
 
     private void Awake()
     {
@@ -55,8 +59,10 @@ public class ShopMenuController : MonoBehaviour
 
         if (activate)
         {
-            UpdateMoneyText(m_yourMoneyBuyScreenText);
+            UpdatePlayerMoneyText();
         }
+
+        UpdateShopkeeperStockItems();
     }
 
     public void ActivateSellScreen(bool activate)
@@ -67,7 +73,7 @@ public class ShopMenuController : MonoBehaviour
 
         if(activate)
         {
-            UpdateMoneyText(m_yourMoneySellScreenText);
+            UpdatePlayerMoneyText();
         }
     }
 
@@ -78,7 +84,50 @@ public class ShopMenuController : MonoBehaviour
         m_sellScreen.SetActive(!activate);
     }
 
-    private void UpdateMoneyText(TextMeshProUGUI textRef)
+    public void RemoveItemFromShopkeeperList(ItemData item)
+    {
+        m_shopkeeperStock.Remove(item);
+    }
+
+    public void UpdateShopkeeperStockItems()
+    {
+        // Remove all previous item slots, if there are any
+        if(m_currentShopStock != null && m_currentShopStock.Count > 0)
+        {
+            foreach(GameObject obj in m_currentShopStock)
+            {
+                Destroy(obj);
+            }
+
+            m_currentShopStock.Clear();
+        }
+        else
+        {
+            m_currentShopStock = new List<GameObject>();
+        }
+
+        foreach(ItemData shopItem in m_shopkeeperStock)
+        {
+            // Create new item slot in the UI and update its information
+            GameObject itemObj = Instantiate(m_itemSlot, m_shopStockList.transform);
+            m_currentShopStock.Add(itemObj);
+
+            ItemSlot itemSlot = itemObj.GetComponent<ItemSlot>();
+
+            itemSlot.Item = shopItem;
+            itemSlot.ItemNameText.text = shopItem.ItemName;
+            itemSlot.ItemImage.sprite = shopItem.ItemIcon;
+            itemSlot.ItemPriceText.text = shopItem.ItemPrice + " G";
+        }
+    }
+
+    public void UpdatePlayerMoneyText()
+    {
+        UpdatePlayerMoneyText(m_yourMoneyBuyScreenText);
+        UpdatePlayerMoneyText(m_yourMoneySellScreenText);
+    }
+
+    private void UpdatePlayerMoneyText(TextMeshProUGUI textRef)
     {
         textRef.text = InventoryManager.Instance.PlayerMoney + " G";
     }

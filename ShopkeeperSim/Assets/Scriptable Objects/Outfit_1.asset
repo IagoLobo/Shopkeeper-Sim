@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d11a87f6976f14386669bdfdcc2c82, type: 3}
   m_Name: Outfit_1
   m_EditorClassIdentifier: 
-  itemID: 1
-  itemName: Yellow Outfit
-  itemPrice: 50
-  itemIcon: {fileID: 49525434, guid: b7a43f30687c1d34591b01761628408b, type: 3}
+  ItemID: 1
+  ItemName: Underwear
+  ItemPrice: 10
+  ItemIcon: {fileID: 878299172, guid: b881b0aabfeea364a9f2ef29699a61de, type: 3}

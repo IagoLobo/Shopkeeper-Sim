@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d11a87f6976f14386669bdfdcc2c82, type: 3}
   m_Name: Hair_1
   m_EditorClassIdentifier: 
-  itemID: 3
-  itemName: Bob Cut Wig
-  itemPrice: 25
-  itemIcon: {fileID: -1396261601, guid: d34cb801efa9ecd4192e226c8169a014, type: 3}
+  ItemID: 4
+  ItemName: Bob Cut Wig
+  ItemPrice: 20
+  ItemIcon: {fileID: -1396261601, guid: d34cb801efa9ecd4192e226c8169a014, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemID: 2
   ItemName: Yellow Outfit
   ItemPrice: 50
-  ItemIcon: {fileID: 49525434, guid: b7a43f30687c1d34591b01761628408b, type: 3}
+  ItemIcon: {fileID: 21300000, guid: b1ca9eab301766344b2147fe570e899c, type: 3}

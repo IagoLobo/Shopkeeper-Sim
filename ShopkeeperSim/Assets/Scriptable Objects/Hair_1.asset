@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemID: 4
   ItemName: Bob Cut Wig
   ItemPrice: 20
-  ItemIcon: {fileID: -1396261601, guid: d34cb801efa9ecd4192e226c8169a014, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 0fd5c4a38fb97f8478266c30e9975031, type: 3}

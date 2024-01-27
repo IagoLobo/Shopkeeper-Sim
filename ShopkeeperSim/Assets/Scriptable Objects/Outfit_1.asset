@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemID: 1
   ItemName: Underwear
   ItemPrice: 10
-  ItemIcon: {fileID: 878299172, guid: b881b0aabfeea364a9f2ef29699a61de, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 904897a344f164c42bedf3ccd94ffc01, type: 3}

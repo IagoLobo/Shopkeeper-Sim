@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemID: 5
   ItemName: Hat
   ItemPrice: 15
-  ItemIcon: {fileID: 9069986, guid: 5c9b247221d124f41b5871347ab939d6, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 9fd81580b35aebc439ccb81a93a0ad7e, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemID: 3
   ItemName: Grey Outfit
   ItemPrice: 40
-  ItemIcon: {fileID: -562047206, guid: c8a3f238499b2a04e8839dd93b5946fc, type: 3}
+  ItemIcon: {fileID: 21300000, guid: 89e7aab3d04122f4cb54afa0d26f2129, type: 3}

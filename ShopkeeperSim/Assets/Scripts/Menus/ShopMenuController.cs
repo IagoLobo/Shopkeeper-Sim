@@ -175,7 +175,7 @@ public class ShopMenuController : MonoBehaviour
             itemSlot.Item = playerItem;
             itemSlot.ItemNameText.text = playerItem.ItemName;
             itemSlot.ItemImage.sprite = playerItem.ItemIcon;
-            itemSlot.ItemPriceText.text = playerItem.ItemPrice + " G";
+            itemSlot.ItemPriceText.text = Mathf.CeilToInt(itemSlot.Item.ItemPrice / 2f) + " G";
         }
 
         // If there's no item left, show out of stock text to player

@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         EventManager.onShopMenuActivation += ToggleFreezePlayerMovement;
+        EventManager.onInventoryMenuActivation += ToggleFreezePlayerMovement;
         m_isPlayerMovementFrozen = false;
     }
 
     private void OnDisable()
     {
         EventManager.onShopMenuActivation -= ToggleFreezePlayerMovement;
+        EventManager.onInventoryMenuActivation -= ToggleFreezePlayerMovement;
     }
 
     private void Update()

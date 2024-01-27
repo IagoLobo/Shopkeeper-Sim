@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 7
   spritePivot: {x: 0.5, y: 0}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1497,9 +1497,9 @@ TextureImporter:
       char_a_p1_0bas_humn_v01_12: -1709722088
       char_a_p1_0bas_humn_v01_16: -787087965
       char_a_p1_0bas_humn_v01_30: -1128205239
-      char_a_p1_0bas_humn_v01_10: 143071630
-      char_a_p1_0bas_humn_v01_41: -1813795479
       char_a_p1_0bas_humn_v01_52: -294357359
+      char_a_p1_0bas_humn_v01_41: -1813795479
+      char_a_p1_0bas_humn_v01_10: 143071630
       char_a_p1_0bas_humn_v01_18: -1844846239
       char_a_p1_0bas_humn_v01_49: 1016634992
       char_a_p1_0bas_humn_v01_40: -1699726480

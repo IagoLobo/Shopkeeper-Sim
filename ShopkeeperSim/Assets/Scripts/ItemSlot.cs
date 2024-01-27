@@ -30,11 +30,14 @@ public class ItemSlot : MonoBehaviour
 
         if(buyingItem)
         {
+            // Add item to player inventory and update current shopkeeper stock
+            InventoryManager.Instance.AddItem(Item);
             ShopMenuController.Instance.RemoveItemFromShopkeeperList(Item);
             ShopMenuController.Instance.UpdateShopkeeperStockItems();
         }
         else
         {
+            // Remove item from player's inventory and update player stock in the UI
             InventoryManager.Instance.RemoveItem(Item);
             ShopMenuController.Instance.UpdatePlayerStockItems();
         }

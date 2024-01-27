@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShopkeeperInteract : MonoBehaviour
 {
+    [SerializeField] private ShopMenuController m_shopMenuController;
     private bool m_isPlayerClose;
 
     private void Awake()
@@ -15,7 +16,7 @@ public class ShopkeeperInteract : MonoBehaviour
     {
         if(Input.GetButtonDown("Submit") && m_isPlayerClose)
         {
-            Debug.Log("Open Shop Menu");
+            m_shopMenuController.ActivateShopMenu(true);
         }
     }
 

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: OutfitData_4
   m_EditorClassIdentifier: 
   OutfitID: 4
+  IsHeadPiece: 1
   OutfitSprite: {fileID: -1396261601, guid: d34cb801efa9ecd4192e226c8169a014, type: 3}

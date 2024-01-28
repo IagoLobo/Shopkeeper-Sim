@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46d378284ab0bed41bcd7f21045d61bb, type: 3}
-  m_Name: OutfitDataAnimation_Outfit1
-  m_EditorClassIdentifier: Assembly-CSharp::OutfitDataAnimation
-  Outfit: {fileID: 11400000, guid: 12227691cc10ed947b2add724c76d1d5, type: 2}
-  OutfitAnimator: {fileID: 22100000, guid: b371e52a0fd7974409bb6723ea05f237, type: 2}
+  m_Name: OutfitDataAnimation_Hair1
+  m_EditorClassIdentifier: 
+  Outfit: {fileID: 11400000, guid: a4f5ff9dc6ffe2940ae197e7c6ae6a34, type: 2}
+  OutfitAnimator: {fileID: 22100000, guid: 0f801cadb97862546bf51f346432b1ce, type: 2}

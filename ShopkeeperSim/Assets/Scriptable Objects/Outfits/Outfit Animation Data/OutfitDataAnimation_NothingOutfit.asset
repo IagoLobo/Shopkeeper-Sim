@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 46d378284ab0bed41bcd7f21045d61bb, type: 3}
   m_Name: OutfitDataAnimation_NothingOutfit
   m_EditorClassIdentifier: Assembly-CSharp::OutfitDataAnimation
   Outfit: {fileID: 11400000, guid: 870bef7ee05424c42b9722b164d99925, type: 2}

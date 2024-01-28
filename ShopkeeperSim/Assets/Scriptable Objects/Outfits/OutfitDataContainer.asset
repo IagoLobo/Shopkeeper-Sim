@@ -21,7 +21,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
   - {fileID: 11400000, guid: 870bef7ee05424c42b9722b164d99925, type: 2}
   OutfitDataAnimationList:
-  - {fileID: 11400000, guid: 90cfdef2d4b3ddf43a889c97f1b13b85, type: 2}
-  - {fileID: 11400000, guid: b4b462c87abc0854583264aeaf2db0ef, type: 2}
   - {fileID: 11400000, guid: f8ce641b20ee9e64287f911e74ad7737, type: 2}
   - {fileID: 11400000, guid: c5e0884a9a8901e4e94d0886b6bde3a0, type: 2}
+  - {fileID: 11400000, guid: 90cfdef2d4b3ddf43a889c97f1b13b85, type: 2}
+  - {fileID: 11400000, guid: b4b462c87abc0854583264aeaf2db0ef, type: 2}
+  - {fileID: 11400000, guid: b2ffcaa212d285343900928dba24c066, type: 2}
+  - {fileID: 11400000, guid: 5ebdafbf66a5c7f4288d03909049a939, type: 2}

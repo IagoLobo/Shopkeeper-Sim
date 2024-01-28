@@ -25,9 +25,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Submit") &&  !ShopMenuController.Instance.IsShopMenuOpen)
+        if(Input.GetButtonDown("Cancel") && !ShopMenuController.Instance.IsShopMenuOpen && !InventoryMenuController.Instance.IsInventoryMenuOpen)
         {
-            // Open inventory menu here
+            InventoryMenuController.Instance.ActivateInventoryMenu(true);
         }
     }
 

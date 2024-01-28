@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ShopMenuController : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class ShopMenuController : MonoBehaviour
 
     [Header("Welcome Screen")]
     [SerializeField] private GameObject m_welcomeScreen;
+    [SerializeField] private GameObject m_buyButton;
 
     [Header("Buy Screen")]
     [SerializeField] private GameObject m_buyScreen;
@@ -56,6 +58,11 @@ public class ShopMenuController : MonoBehaviour
         m_shopMenuCanvas.SetActive(activate);
         IsShopMenuOpen = activate;
         EventManager.RaiseOnShopMenuActivation();
+
+        if(activate)
+        {
+            EventSystem.current.SetSelectedGameObject(m_buyButton);
+        }
     }
 
     public void ActivateBuyScreen(bool activate)
@@ -91,6 +98,8 @@ public class ShopMenuController : MonoBehaviour
         m_welcomeScreen.SetActive(activate);
         m_buyScreen.SetActive(!activate);
         m_sellScreen.SetActive(!activate);
+
+        EventSystem.current.SetSelectedGameObject(m_buyButton);
     }
 
     public void RemoveItemFromShopkeeperList(ItemData item)
@@ -133,6 +142,11 @@ public class ShopMenuController : MonoBehaviour
         if(m_currentShopStock.Count <= 0)
         {
             m_outOfStockBuyScreen.SetActive(true);
+        }
+        else
+        {
+            // Select the first item in the options
+            EventSystem.current.SetSelectedGameObject(m_currentShopStock[0]);
         }
     }
 
@@ -182,6 +196,11 @@ public class ShopMenuController : MonoBehaviour
         if (m_currentPlayerStock.Count <= 0)
         {
             m_outOfStockSellScreen.SetActive(true);
+        }
+        else
+        {
+            // Select the first item in the options
+            EventSystem.current.SetSelectedGameObject(m_currentPlayerStock[0]);
         }
     }
 }

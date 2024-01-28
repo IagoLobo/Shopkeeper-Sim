@@ -13,7 +13,7 @@ public class ShopkeeperInteract : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetButtonDown("Submit") && m_isPlayerClose && !ShopMenuController.Instance.IsShopMenuOpen)
+        if(Input.GetButtonDown("Submit") && m_isPlayerClose && !ShopMenuController.Instance.IsShopMenuOpen && !InventoryMenuController.Instance.IsInventoryMenuOpen)
         {
             ShopMenuController.Instance.ActivateShopMenu(true);
         }

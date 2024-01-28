@@ -131,4 +131,9 @@ public class InventoryMenuController : MonoBehaviour
     {
         return m_playerOutfitReference;
     }
+
+    public void CloseGameButton()
+    {
+        Application.Quit();
+    }
 }

@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa8235811c93af4c9cea63e9bded974, type: 3}
   m_Name: OutfitDataContainer
   m_EditorClassIdentifier: 
-  outfitDataList:
-  - {fileID: 11400000, guid: 870bef7ee05424c42b9722b164d99925, type: 2}
-  - {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
+  OutfitDataList:
   - {fileID: 11400000, guid: 12227691cc10ed947b2add724c76d1d5, type: 2}
   - {fileID: 11400000, guid: 3c42de3ec6f3a3641a303341401052cc, type: 2}
   - {fileID: 11400000, guid: 05c9aece1edb0e04eac7628e4a94f61c, type: 2}
   - {fileID: 11400000, guid: a4f5ff9dc6ffe2940ae197e7c6ae6a34, type: 2}
   - {fileID: 11400000, guid: 63ed1ce085b78ce4ea9aeca7a37450fe, type: 2}
+  - {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
+  - {fileID: 11400000, guid: 870bef7ee05424c42b9722b164d99925, type: 2}
+  OutfitDataAnimationList:
+  - {fileID: 11400000, guid: 90cfdef2d4b3ddf43a889c97f1b13b85, type: 2}
+  - {fileID: 11400000, guid: b4b462c87abc0854583264aeaf2db0ef, type: 2}
+  - {fileID: 11400000, guid: f8ce641b20ee9e64287f911e74ad7737, type: 2}
+  - {fileID: 11400000, guid: c5e0884a9a8901e4e94d0886b6bde3a0, type: 2}

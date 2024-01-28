@@ -89,8 +89,8 @@ MonoBehaviour:
   CurrentPlayerOutfit:
     CharacterHeadItem: {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
     CharacterOutfitItem: {fileID: 11400000, guid: 12227691cc10ed947b2add724c76d1d5, type: 2}
-  m_charHead: {fileID: 6631708290683084989}
-  m_charOutfit: {fileID: 3058861833451529650}
+  m_charHead: {fileID: 2569082284552537237}
+  m_charOutfit: {fileID: 613476683663451111}
 --- !u!1 &5949439396804684606
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,11 +214,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}
---- !u!212 &3058861833451529650 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8711058158017459908, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}
-  m_PrefabInstance: {fileID: 5949439397580952438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4280560694304099997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7635638600078990827, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}
@@ -274,11 +269,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &6631708290683084989 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1051634568780280779, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}
-  m_PrefabInstance: {fileID: 5949439397580952438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9203072478589814161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3253646447517882087, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}

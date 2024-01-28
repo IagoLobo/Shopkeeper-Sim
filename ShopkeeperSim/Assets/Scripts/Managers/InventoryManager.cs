@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
     public List<ItemData> PlayerInventory;
     public int PlayerMoney { get; private set; }
 
-    public OutfitDataContainer OutfitDataList;
+    public OutfitDataContainer OutfitDataContainerList;
     [SerializeField] private PlayerOutfit m_playerOutfit;
     [SerializeField] private OutfitData m_nothingOutfit;
     [SerializeField] private OutfitData m_nothingHead;
@@ -59,29 +59,29 @@ public class InventoryManager : MonoBehaviour
 
     public void EquipOutfit(int itemID)
     {
-        OutfitData data = OutfitDataList.outfitDataList.First(x => x.OutfitID == itemID);
+        OutfitData data = OutfitDataContainerList.OutfitDataList.First(x => x.OutfitID == itemID);
 
         if (data.IsHeadPiece)
         {
-            m_playerOutfit.SetHead(data, data.OutfitSprite);
+            m_playerOutfit.SetHead(data);
         }
         else
         {
-            m_playerOutfit.SetOutfit(data, data.OutfitSprite);
+            m_playerOutfit.SetOutfit(data);
         }
     }
 
     public void UnequipOutfit(int itemID)
     {
-        OutfitData data = OutfitDataList.outfitDataList.First(x => x.OutfitID == itemID);
+        OutfitData data = OutfitDataContainerList.OutfitDataList.First(x => x.OutfitID == itemID);
 
         if (data.IsHeadPiece)
         {
-            m_playerOutfit.SetHead(m_nothingHead, m_nothingHead.OutfitSprite);
+            m_playerOutfit.SetHead(m_nothingHead);
         }
         else
         {
-            m_playerOutfit.SetOutfit(m_nothingOutfit, m_nothingOutfit.OutfitSprite);
+            m_playerOutfit.SetOutfit(m_nothingOutfit);
         }
     }
 

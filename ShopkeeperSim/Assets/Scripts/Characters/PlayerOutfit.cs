@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 [Serializable]
 public struct Outfit
@@ -14,18 +15,18 @@ public class PlayerOutfit : MonoBehaviour
 {
     public Outfit CurrentPlayerOutfit;
 
-    [SerializeField] private SpriteRenderer m_charHead;
-    [SerializeField] private SpriteRenderer m_charOutfit;
+    [SerializeField] private Animator m_charHead;
+    [SerializeField] private Animator m_charOutfit;
 
-    public void SetHead(OutfitData data, Sprite headSprite)
+    public void SetHead(OutfitData data)
     {
-        m_charHead.sprite = headSprite;
         CurrentPlayerOutfit.CharacterHeadItem = data;
+        m_charHead.runtimeAnimatorController = InventoryManager.Instance.OutfitDataContainerList.OutfitDataAnimationList.First(x => x.Outfit.OutfitID == data.OutfitID).OutfitAnimator;
     }
 
-    public void SetOutfit(OutfitData data, Sprite outfitSprite)
+    public void SetOutfit(OutfitData data)
     {
-        m_charOutfit.sprite = outfitSprite;
         CurrentPlayerOutfit.CharacterOutfitItem = data;
+        m_charOutfit.runtimeAnimatorController = InventoryManager.Instance.OutfitDataContainerList.OutfitDataAnimationList.First(x => x.Outfit.OutfitID == data.OutfitID).OutfitAnimator;
     }
 }

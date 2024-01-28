@@ -10,5 +10,6 @@ public class InventoryItemSlot : MonoBehaviour
     public void EquipItem()
     {
         InventoryManager.Instance.EquipOutfit(Item.ItemID);
+        InventoryMenuController.Instance.UpdatePlayerImages();
     }
 }

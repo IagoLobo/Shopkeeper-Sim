@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class InventoryMenuController : MonoBehaviour
@@ -17,6 +18,11 @@ public class InventoryMenuController : MonoBehaviour
     [SerializeField] private GameObject m_playerItemSlotPrefab;
     private List<GameObject> m_currentPlayerInventory;
     [SerializeField] private GameObject m_noItemText;
+
+    [Header("--- Player Images ---")]
+    [SerializeField] private Image m_playerHeadImage;
+    [SerializeField] private Image m_playerOutfitImage;
+    [SerializeField] private PlayerOutfit m_playerOutfitReference;
 
     [Header("Your Money")]
     [SerializeField] private TextMeshProUGUI m_yourMoneyText;
@@ -45,6 +51,7 @@ public class InventoryMenuController : MonoBehaviour
         UpdatePlayerMoneyText();
         EventManager.RaiseOnInventoryMenuActivation();
         UpdatePlayerInventoryMenuItems();
+        UpdatePlayerImages();
 
         EventSystem.current.SetSelectedGameObject(m_backButton);
     }
@@ -86,5 +93,11 @@ public class InventoryMenuController : MonoBehaviour
         // If there's no item left, show out of stock text to player
         bool showNoItemText = m_currentPlayerInventory.Count <= 0;
         m_noItemText.SetActive(showNoItemText);
+    }
+
+    public void UpdatePlayerImages()
+    {
+        m_playerHeadImage.sprite = m_playerOutfitReference.CurrentPlayerOutfit.CharacterHeadItem.OutfitSprite;
+        m_playerOutfitImage.sprite = m_playerOutfitReference.CurrentPlayerOutfit.CharacterOutfitItem.OutfitSprite;
     }
 }

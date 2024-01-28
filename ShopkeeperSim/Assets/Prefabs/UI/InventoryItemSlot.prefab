@@ -361,4 +361,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 0}
   ItemImage: {fileID: 6963079763551839392}
-  m_equipText: {fileID: 5431556841258240724}
+  m_equipTextObj: {fileID: 5431556841258240724}
+  m_equipText: {fileID: 9043647102478672678}

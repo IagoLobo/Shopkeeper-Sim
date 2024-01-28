@@ -18,6 +18,7 @@ public class InventoryMenuController : MonoBehaviour
     [SerializeField] private GameObject m_playerItemSlotPrefab;
     private List<GameObject> m_currentPlayerInventory;
     [SerializeField] private GameObject m_noItemText;
+    private List<InventoryItemSlot> m_currentPlayerInventorySlots;
 
     [Header("--- Player Images ---")]
     [SerializeField] private Image m_playerHeadImage;
@@ -52,6 +53,7 @@ public class InventoryMenuController : MonoBehaviour
         EventManager.RaiseOnInventoryMenuActivation();
         UpdatePlayerInventoryMenuItems();
         UpdatePlayerImages();
+        UpdateInventorySlotListEquipText();
 
         EventSystem.current.SetSelectedGameObject(m_backButton);
     }
@@ -72,10 +74,12 @@ public class InventoryMenuController : MonoBehaviour
             }
 
             m_currentPlayerInventory.Clear();
+            m_currentPlayerInventorySlots.Clear();
         }
         else
         {
             m_currentPlayerInventory = new List<GameObject>();
+            m_currentPlayerInventorySlots = new List<InventoryItemSlot>();
         }
 
         foreach (ItemData playerItem in InventoryManager.Instance.PlayerInventory)
@@ -85,6 +89,7 @@ public class InventoryMenuController : MonoBehaviour
             m_currentPlayerInventory.Add(itemObj);
 
             InventoryItemSlot itemSlot = itemObj.GetComponent<InventoryItemSlot>();
+            m_currentPlayerInventorySlots.Add(itemSlot);
 
             itemSlot.Item = playerItem;
             itemSlot.ItemImage.sprite = playerItem.ItemIcon;
@@ -99,5 +104,31 @@ public class InventoryMenuController : MonoBehaviour
     {
         m_playerHeadImage.sprite = m_playerOutfitReference.CurrentPlayerOutfit.CharacterHeadItem.OutfitSprite;
         m_playerOutfitImage.sprite = m_playerOutfitReference.CurrentPlayerOutfit.CharacterOutfitItem.OutfitSprite;
+    }
+
+    public void UpdateInventorySlotListEquipText()
+    {
+        if(m_currentPlayerInventorySlots.Count > 0)
+        {
+            foreach (InventoryItemSlot itemSlot in m_currentPlayerInventorySlots)
+            {
+                // If it's different IDs, this item is not equipped, write Equip
+                if (itemSlot.Item.ItemID != m_playerOutfitReference.CurrentPlayerOutfit.CharacterHeadItem.OutfitID || itemSlot.Item.ItemID != m_playerOutfitReference.CurrentPlayerOutfit.CharacterOutfitItem.OutfitID)
+                {
+                    itemSlot.ToggleEquipText(true);
+                }
+
+                // If it's the same ID, this item is already equipped, write Unequip
+                if(itemSlot.Item.ItemID == m_playerOutfitReference.CurrentPlayerOutfit.CharacterHeadItem.OutfitID || itemSlot.Item.ItemID == m_playerOutfitReference.CurrentPlayerOutfit.CharacterOutfitItem.OutfitID)
+                {
+                    itemSlot.ToggleEquipText(false);
+                }
+            }
+        }
+    }
+
+    public PlayerOutfit GetPlayerOutfit()
+    {
+        return m_playerOutfitReference;
     }
 }

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c42830383f577b4cbf7d6a2882a9b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_movementSpeed: 20
+  m_movementSpeed: 10
   m_rigidbody2D: {fileID: 5949439396760798724}
   m_baseCharacterAnimator: {fileID: 8916757732254337295}
   m_outfitAnimator: {fileID: 613476683663451111}

@@ -60,7 +60,7 @@ public class ShopMenuController : MonoBehaviour
         IsShopMenuOpen = activate;
         EventManager.RaiseOnShopMenuActivation();
 
-        if(activate)
+        if(IsShopMenuOpen)
         {
             EventSystem.current.SetSelectedGameObject(m_buyButton);
         }

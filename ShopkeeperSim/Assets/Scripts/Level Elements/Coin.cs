@@ -14,7 +14,7 @@ public class Coin : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Submit") && m_isPlayerClose)
+        if (Input.GetKeyDown(KeyCode.E) && m_isPlayerClose)
         {
             // Give the money to the player
             InventoryManager.Instance.AddMoney(m_coinValue);

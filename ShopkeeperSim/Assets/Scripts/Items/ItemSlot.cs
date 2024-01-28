@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +15,7 @@ public class ItemSlot : MonoBehaviour
         if(InventoryManager.Instance.PlayerMoney < Item.ItemPrice && buyingItem)
         {
             // Not enough money, don't trade item
-            Debug.Log("NOT ENOUGH MONEY!");
+            ShopMenuController.Instance.FlashMoneyText();
             return;
         }
 

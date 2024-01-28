@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -209,6 +208,27 @@ public class ShopMenuController : MonoBehaviour
             // Select the first item in the options
             EventSystem.current.SetSelectedGameObject(m_currentPlayerStock[0]);
             m_outOfStockSellScreen.SetActive(false);
+        }
+    }
+
+    public void FlashMoneyText()
+    {
+        Color32 color = Color.red;
+        float seconds = 0.5f;
+
+        StartCoroutine(FlashTextCoroutine(seconds, m_yourMoneyBuyScreenText, color));
+    }
+
+    private IEnumerator FlashTextCoroutine(float seconds, TextMeshProUGUI text, Color color)
+    {
+        Color originalColor = text.color;
+
+        // If the new color is different, we need to apply it to show player that the money isn't enough
+        if(color != text.color)
+        {
+            text.color = color;
+            yield return new WaitForSeconds(seconds);
+            text.color = originalColor;
         }
     }
 }

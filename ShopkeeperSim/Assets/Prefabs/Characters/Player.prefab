@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_movementSpeed: 20
   m_rigidbody2D: {fileID: 5949439396760798724}
+  m_animator: {fileID: 8916757732254337295}
 --- !u!50 &5949439396760798724
 Rigidbody2D:
   serializedVersion: 4
@@ -216,6 +217,31 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 8711058158017459908, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}
   m_PrefabInstance: {fileID: 5949439397580952438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4280560694304099997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7635638600078990827, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}
+  m_PrefabInstance: {fileID: 5949439397580952438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8916757732254337295
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280560694304099997}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d5f7a0132f6fd84891002e0afa0f23a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &4280560694304099999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7635638600078990825, guid: a36da8f1d5ba3a043ab933be5233f090, type: 3}

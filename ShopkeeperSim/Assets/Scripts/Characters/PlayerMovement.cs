@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float m_movementSpeed;
     [SerializeField] private Rigidbody2D m_rigidbody2D;
+    [SerializeField] private Animator m_animator;
     private Vector2 m_movementVector;
     private bool m_isPlayerMovementFrozen;
 
@@ -31,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
         
             // Normalize vector so movement is more uniform
             m_movementVector.Normalize();
+
+            // Update animation
+            m_animator.SetFloat("HorizontalMovement", m_movementVector.x);
+            m_animator.SetFloat("VerticalMovement", m_movementVector.y);
         }
     }
     

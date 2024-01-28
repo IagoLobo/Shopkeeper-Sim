@@ -22,11 +22,13 @@ public class ShopMenuController : MonoBehaviour
     [SerializeField] private GameObject m_buyScreen;
     [SerializeField] private TextMeshProUGUI m_yourMoneyBuyScreenText;
     [SerializeField] private GameObject m_outOfStockBuyScreen;
+    [SerializeField] private GameObject m_backButtonBuyScreen;
 
     [Header("Sell Screen")]
     [SerializeField] private GameObject m_sellScreen;
     [SerializeField] private TextMeshProUGUI m_yourMoneySellScreenText;
     [SerializeField] private GameObject m_outOfStockSellScreen;
+    [SerializeField] private GameObject m_backButtonSellScreen;
 
     [Header("--- Shopkeeper Stock ---")]
     [SerializeField] private List<ItemData> m_shopkeeperStock;
@@ -141,12 +143,15 @@ public class ShopMenuController : MonoBehaviour
         // If there's no item left, show out of stock text to player
         if(m_currentShopStock.Count <= 0)
         {
+            // Show text and select back button
             m_outOfStockBuyScreen.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(m_backButtonBuyScreen);
         }
         else
         {
             // Select the first item in the options
             EventSystem.current.SetSelectedGameObject(m_currentShopStock[0]);
+            m_outOfStockBuyScreen.SetActive(false);
         }
     }
 
@@ -195,13 +200,14 @@ public class ShopMenuController : MonoBehaviour
         // If there's no item left, show out of stock text to player
         if (m_currentPlayerStock.Count <= 0)
         {
+            // Show text and select back button
             m_outOfStockSellScreen.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(m_backButtonSellScreen);
         }
         else
         {
             // Select the first item in the options
             EventSystem.current.SetSelectedGameObject(m_currentPlayerStock[0]);
-
             m_outOfStockSellScreen.SetActive(false);
         }
     }

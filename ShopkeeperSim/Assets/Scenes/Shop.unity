@@ -2155,9 +2155,11 @@ MonoBehaviour:
   m_buyScreen: {fileID: 1193163570}
   m_yourMoneyBuyScreenText: {fileID: 1806025778}
   m_outOfStockBuyScreen: {fileID: 642301931}
+  m_backButtonBuyScreen: {fileID: 1382737121}
   m_sellScreen: {fileID: 108629684}
   m_yourMoneySellScreenText: {fileID: 54019036}
   m_outOfStockSellScreen: {fileID: 965104578}
+  m_backButtonSellScreen: {fileID: 586741076}
   m_shopkeeperStock:
   - {fileID: 11400000, guid: 2fbd9bb038ae0f043994a41a54ebd1e8, type: 2}
   - {fileID: 11400000, guid: e53e9742df5ff1649868baf5dcec066f, type: 2}

@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +9,6 @@ public class InventoryItemSlot : MonoBehaviour
 
     public void EquipItem()
     {
-        
+        InventoryManager.Instance.EquipOutfit(Item.ItemID);
     }
 }

@@ -12,7 +12,7 @@ public class InventoryMenuController : MonoBehaviour
     [Header("--- Canvas ---")]
     [SerializeField] private GameObject m_inventoryMenuCanvas;
 
-    [Header("--- Player Inventory ---")]
+    [Header("--- Player Inventory Grid ---")]
     [SerializeField] private GameObject m_playerInventoryGrid;
     [SerializeField] private GameObject m_playerItemSlotPrefab;
     private List<GameObject> m_currentPlayerInventory;

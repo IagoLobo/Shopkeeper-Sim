@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentPlayerOutfit:
-    CharacterHeadItem: {fileID: 0}
+    CharacterHeadItem: {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
     CharacterOutfitItem: {fileID: 11400000, guid: 12227691cc10ed947b2add724c76d1d5, type: 2}
   m_charHead: {fileID: 6631708290683084989}
   m_charOutfit: {fileID: 3058861833451529650}

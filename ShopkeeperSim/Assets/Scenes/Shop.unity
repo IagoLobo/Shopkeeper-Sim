@@ -5325,6 +5325,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 410c23db646997646a13003c8433bab0, type: 2}
   OutfitDataList: {fileID: 11400000, guid: 418d45e764617ba4985b61d171a0a690, type: 2}
   m_playerOutfit: {fileID: 1291571985}
+  m_nothingOutfit: {fileID: 11400000, guid: 870bef7ee05424c42b9722b164d99925, type: 2}
+  m_nothingHead: {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
 --- !u!1 &1582592720
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,13 +17,15 @@ public class PlayerOutfit : MonoBehaviour
     [SerializeField] private SpriteRenderer m_charHead;
     [SerializeField] private SpriteRenderer m_charOutfit;
 
-    public void SetHead(Sprite headSprite)
+    public void SetHead(OutfitData data, Sprite headSprite)
     {
         m_charHead.sprite = headSprite;
+        CurrentPlayerOutfit.CharacterHeadItem = data;
     }
 
-    public void SetOutfit(Sprite outfitSprite)
+    public void SetOutfit(OutfitData data, Sprite outfitSprite)
     {
         m_charOutfit.sprite = outfitSprite;
+        CurrentPlayerOutfit.CharacterOutfitItem = data;
     }
 }

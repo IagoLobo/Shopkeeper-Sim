@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: OutfitDataContainer
   m_EditorClassIdentifier: 
   outfitDataList:
+  - {fileID: 11400000, guid: 870bef7ee05424c42b9722b164d99925, type: 2}
+  - {fileID: 11400000, guid: 4350afe8561306942946b15ccf1af8fe, type: 2}
   - {fileID: 11400000, guid: 12227691cc10ed947b2add724c76d1d5, type: 2}
   - {fileID: 11400000, guid: 3c42de3ec6f3a3641a303341401052cc, type: 2}
   - {fileID: 11400000, guid: 05c9aece1edb0e04eac7628e4a94f61c, type: 2}

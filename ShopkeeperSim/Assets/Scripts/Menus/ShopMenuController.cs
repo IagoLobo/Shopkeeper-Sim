@@ -201,6 +201,8 @@ public class ShopMenuController : MonoBehaviour
         {
             // Select the first item in the options
             EventSystem.current.SetSelectedGameObject(m_currentPlayerStock[0]);
+
+            m_outOfStockSellScreen.SetActive(false);
         }
     }
 }

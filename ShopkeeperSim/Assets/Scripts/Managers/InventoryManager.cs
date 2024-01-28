@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
 
     public OutfitDataContainer OutfitDataList;
     [SerializeField] private PlayerOutfit m_playerOutfit;
+    [SerializeField] private OutfitData m_nothingOutfit;
+    [SerializeField] private OutfitData m_nothingHead;
 
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class InventoryManager : MonoBehaviour
 
     public void RemoveItem(ItemData item)
     {
+        RemoveOutfitFromPlayer(item.ItemID);
         PlayerInventory.Remove(item);
     }
 
@@ -60,11 +63,44 @@ public class InventoryManager : MonoBehaviour
 
         if (data.IsHeadPiece)
         {
-            m_playerOutfit.SetHead(data.OutfitSprite);
+            m_playerOutfit.SetHead(data, data.OutfitSprite);
         }
         else
         {
-            m_playerOutfit.SetOutfit(data.OutfitSprite);
+            m_playerOutfit.SetOutfit(data, data.OutfitSprite);
+        }
+    }
+
+    public void UnequipOutfit(int itemID)
+    {
+        OutfitData data = OutfitDataList.outfitDataList.First(x => x.OutfitID == itemID);
+
+        if (data.IsHeadPiece)
+        {
+            m_playerOutfit.SetHead(m_nothingHead, m_nothingHead.OutfitSprite);
+        }
+        else
+        {
+            m_playerOutfit.SetOutfit(m_nothingOutfit, m_nothingOutfit.OutfitSprite);
+        }
+    }
+
+    private void RemoveOutfitFromPlayer(int itemID)
+    {
+        if(m_playerOutfit.CurrentPlayerOutfit.CharacterHeadItem != null)
+        {
+            if(m_playerOutfit.CurrentPlayerOutfit.CharacterHeadItem.OutfitID == itemID)
+            {
+                UnequipOutfit(itemID);
+            }
+        }
+
+        if (m_playerOutfit.CurrentPlayerOutfit.CharacterOutfitItem != null)
+        {
+            if (m_playerOutfit.CurrentPlayerOutfit.CharacterOutfitItem.OutfitID == itemID)
+            {
+                UnequipOutfit(itemID);
+            }
         }
     }
 }
